@@ -4,7 +4,11 @@
 # tony baldwin | http://tonybaldwin.me
 #
 
-$url = "http://tonybaldwin.homelinux.net/mine/tpcloud";
+if (file_exists('../admin/config.php')) {
+include '../admin/config.php';
+} else {
+include 'admin/config.php';
+}
 
 echo "<div id=\"navbar\">";
 echo "<a href=\"http://tonyb.us/transprocloud\"><img src=\"$url/images/tpnavbutton.jpg\" border=\"0\"></a>";
