@@ -1,0 +1,14 @@
+/** main.css for transprocloud
+ * by tony baldwin | http://tonybaldwin.me
+ */
+
+body { backgroung-color: white; color: black; margin: auto; width: 100%; }
+h1,h2,h3,h4 {color: #28215e; text-decoration: underline; }
+a:link {text-decoration: underline; color: #032889;}
+a:visited {text-decoration: none; color: #3946ac;}
+a:active {text-decoration: none; color: #999;}
+a:hover {text-decoration: none; background-color: #303e74; color: white; -moz-border-radius: 3px; border-radius: 3px;}
+#header {background-color: #eef8ff; color: black; width: 100%; border-bottom: 1px solid; padding:5px;}
+#navbar {background-color: #eef8ff; color: black; float: left; width: 200px; border-right: 2px solid; padding: 5px; border-bottom: 2px solid;}
+#main {float: left; width: 800px; padding: 15px;}
+#footer {background-color: #eef8ff; clear: both; border-top: solid 1px; padding: 5px;}
