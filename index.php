@@ -22,10 +22,6 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 <p>TransProCloud will allow creation and management of a client database, provider database, and project database.</p>
 <p>Eventually, it will include invoicing and other matters, as well.</p>
 <p>This is my first attempt to create a webapplication in php that works with a database.</p>
-<p>nothing here yet...working on building a client/project database with functions based on <a href="http://tonyb.us/tpcalc">TransProCalc</a>, the tcl/tk, translation project management tool.</p>
-<p>TransProCloud will allow creation and management of a client database, provider database, and project database.</p>
-<p>Eventually, it will include invoicing and other matters, as well.</p>
-<p>This is my first attempt to create a webapplication in php that works with a database.</p>
 
 </div>
 
