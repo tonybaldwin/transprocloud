@@ -36,7 +36,7 @@ while($row = mysql_fetch_assoc($result))
 	$state = $row['state'];
 }
 echo "<h4>Client Links:</h4>
-<ul>Name: $name</li>
+<ul><li>Name: $name</li>
 <li>website: <a href=\"$website\">$website</a></li>
 <li>provider portal: <a href=\"$provsys\">$provsys</a></li>
 <li>projects: <a href=\"$url/projects/clist.php?name=$name\">$name projects</a></li>
