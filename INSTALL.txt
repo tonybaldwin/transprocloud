@@ -1,0 +1,21 @@
+TransProCloud - Installation
+
+This is all very preliminary.
+TransProCloud requires a LAMP server.
+
+Clone the git repository to where you want the app.
+Create a mysql database.
+Enter the dbuser, dbname, dbpass, dbhost, and site_url
+into admin.
+run admin/maketables.php from the cli
+/usr/bin/php ../admin/maketables.php
+
+BEWARE:
+This is not even alpha, yet.
+This code is not complete.
+When this code is actually a stable release, 
+this BEWARE message will be removed from this file.
+
+
+Tony
+http://tonybaldwin.me
