@@ -14,14 +14,16 @@ mysql_query("CREATE TABLE providers(
 id INT NOT NULL AUTO_INCREMENT, 
 PRIMARY KEY(id),
  name VARCHAR(100),
- natlang varchar(2),
+ natlang varchar(5),
  srclangs varchar(200),
  street varchar(200),
  city varchar(100),
+ state varchar(100),
  country varchar(20),
  zip varchar(20),
  email varchar(200),
- website varchar(200))")
+ website varchar(200),
+ notes varchar(500))")
  or die(mysql_error());  
 
 echo "Providers Table Created!";

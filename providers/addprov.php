@@ -6,7 +6,7 @@
 <title>TransProCloud</title>
 </head>
 <body>
-<!-- transprocloud index --!>
+
 <?php
 include '../templates/header.php';
 include '../admin/config.php';
@@ -14,18 +14,19 @@ include '../templates/navbar.php';
 ?>
 
 <div id="main">
-<h4>Add Client:</h4>
+<h4>Add Provider:</h4>
 
-<form action="addclient.php" method="post">
-	<input type=text name=name value="client name"></input>
-	<input type=text name=street value="street name"></input>
+<form action="addprov.php" method="post">
+	<input type=text name=name value="provider name"></input>
+	<input type=text name=street value="street"></input>
 	<input type=text name=city value="city"></input>
 	<input type=text name=state value="state or province"></input>
 	<input type=text name=country value="country"></input>
 	<input type=text name=zip value="zip or postal code"></input>
-	<input type=text name=website value="website"></input>
 	<input type=text name=email value="email"></input>
-	<input type=text name=provsys value="provider portal"></input>
+	<input type=text name=website value="website or profile"></input>
+	<input type=text name=natlang value="native tongue"></input>
+	<input type=text name=srclangs value="source languages"></input>
 	<input type=text name=notes size=100 value="notes"></input>
 	<input type="hidden" name="act" value="post"></input>
 	<input type=submit name="submit" value="Submit"></input>
@@ -42,11 +43,12 @@ if($act == "post") {
 	$country = $_POST['country'];
 	$website = $_POST['website'];
 	$email = $_POST['email'];
-	$provsys = $_POST['provsys'];
+	$natlang = $_POST['natlang'];
+	$srclangs = $_POST['srclangs'];
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="INSERT INTO clients (name, street, city, country, zip, email, website, provsys, notes, state) VALUES('$name', '$street', '$city', '$country', '$zip', '$email', '$website', '$provsys', '$notes', '$state')";
+	$query="INSERT INTO providers (name, street, city, state, country, zip, email, website, natlang, srclangs, notes) VALUES('$name', '$street', '$city', '$state', '$country', '$zip', '$email', '$website', '$natlang', '$srclangs', '$notes')";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
     }

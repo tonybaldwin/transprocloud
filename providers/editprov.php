@@ -20,7 +20,7 @@ $name = isset($_GET['name']) ? htmlentities($_GET['name']) : false;
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
 if (isset($name)) {
-$query  = "SELECT * FROM clients where name = \"$name\"";
+$query  = "SELECT * FROM providers where name = \"$name\"";
 $result = mysql_query($query);
 while($row = mysql_fetch_assoc($result))
 {
@@ -32,20 +32,21 @@ while($row = mysql_fetch_assoc($result))
 	$zip = $row['zip'];
 	$email = $row['email'];
 	$website = $row['website'];
-	$provsys = $row['provsys'];
+	$natlang = $row['natlang'];
+	$srclangs = $row['srclangs'];
 	$notes = $row['notes'];
 	$state = $row['state'];
 }
 echo "<h4>Client Links:</h4>
 <ul><li>ID: $id, Name: $name</li>
 <li>website: <a href=\"$website\">$website</a></li>
-<li>provider portal: <a href=\"$provsys\">$provsys</a></li>
-<li>projects: <a href=\"$url/projects/clist.php?name=$name\">$name projects</a></li>
+<li>languages: $srclangs to  $natlang</li>
+<li>projects: <a href=\"$url/projects/pplist.php?name=$name\">$name projects</a></li>
 </ul><hr />";
 
 
-echo "<h4>Edit Client:</h4>
-<form action=\"editclient.php?name=$name\" method=\"post\">
+echo "<h4>Edit Provider:</h4>
+<form action=\"editprov.php?name=$name\" method=\"post\">
 	<input type=text name=name value=\"$name\"></input>
 	<input type=text name=street value=\"$street\"></input>
 	<input type=text name=city value=\"$city\"></input>
@@ -54,7 +55,8 @@ echo "<h4>Edit Client:</h4>
 	<input type=text name=zip value=\"$zip\"></input>
 	<input type=text name=website value=\"$website\"></input>
 	<input type=text name=email value=\"$email\"></input>
-	<input type=text name=provsys value=\"$provsys\"></input>
+	<input type=text name=natlang value=\"$natlang\"></input>
+	<input type=text name=srclangs value=\"$srclangs\"></input>
 	<input type=text name=notes size=100 value=\"$notes\"></input>
 	<input type=\"hidden\" name=\"act\" value=\"post\"></input>
 	<input type=submit name=\"submit\" value=\"Submit\"></input>
@@ -74,14 +76,15 @@ if($act == "post") {
 	$country = $_POST['country'];
 	$website = $_POST['website'];
 	$email = $_POST['email'];
-	$provsys = $_POST['provsys'];
+	$natlang = $_POST['natlang'];
+	$srclangs = $_POST['srclangs'];
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="UPDATE clients SET name='$name', street='$street', city='$city', country='$country', zip='$zip', email='$email', website='$website', provsys='$provsys', notes='$notes', state='$state' WHERE id = '$id'";
+	$query="UPDATE providers SET name='$name', street='$street', city='$city', country='$country', zip='$zip', email='$email', website='$website', natlang='$natlang', notes='$notes', state='$state', srclangs='$srclangs' WHERE id = '$id'";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
-	echo "<h4>Client updated.</h4> <p><a href=\"editclient.php?name=$name\">Refresh page to verify results</a>.</p>";
+	echo "<h4>Client updated.</h4> <p><a href=\"editprov.php?name=$name\">Refresh page to verify results</a>.</p>";
     }
 ?>
 
