@@ -22,10 +22,10 @@ PRIMARY KEY(id),
  country varchar(20),
  zip varchar(20),
  email varchar(20),
- sitelink varchar(20)")
+ sitelink varchar(20))")
  or die(mysql_error());  
 
-echo "Providers Table Created!";
+echo "Providers Table Created!\n";
 
 $clitable = mysql_query("CREATE TABLE clients(
 id INT NOT NULL AUTO_INCREMENT, 
@@ -39,10 +39,10 @@ PRIMARY KEY(id),
  email varchar(20),
  sitelink varchar(20),
  provsys varchar(20),
- notes varchar(500)")
+ notes varchar(500))")
  or die(mysql_error());  
 
-echo "Clients Table Created!";
+echo "Clients Table Created!\n";
 
 $projtable = mysql_query("CREATE TABLE projects(
 id INT NOT NULL AUTO_INCREMENT, 
@@ -56,9 +56,9 @@ PRIMARY KEY(id),
  country varchar(20),
  zip varchar(20),
  email varchar(20),
- sitelink varchar(20)")
+ sitelink varchar(20))")
  or die(mysql_error());  
 
-echo "Projects Table Created!";
+echo "Projects Table Created!\n";
 
 ?>
