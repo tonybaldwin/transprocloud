@@ -37,7 +37,7 @@ while($row = mysql_fetch_assoc($result))
 	$notes = $row['notes'];
 	$state = $row['state'];
 }
-echo "<h4>Client Links:</h4>
+echo "<h4>Provider Links:</h4>
 <ul><li>ID: $id, Name: $name</li>
 <li>website: <a href=\"$website\">$website</a></li>
 <li>languages: $srclangs to  $natlang</li>
