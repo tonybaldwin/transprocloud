@@ -17,12 +17,48 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 ?>
 
 <div id="main">
-<p><a href="http://tonyb.us/transprocloud"><img src="images/tpcloud.png" width="600" alt="TransProCloud"></a></p>
-<p>nothing here yet...working on building a client/project database with functions based on <a href="http://tonyb.us/tpcalc">TransProCalc</a>, the tcl/tk, translation project management tool.</p>
-<p>TransProCloud will allow creation and management of a client database, provider database, and project database.</p>
-<p>Eventually, it will include invoicing and other matters, as well.</p>
-<p>This is my first attempt to create a webapplication in php that works with a database.</p>
+<a href="http://tonyb.us/transprocloud"><img src="images/tpcloud.png" width="600" alt="TransProCloud"></a>
+<h4><a href="http://tonyb.us/transprocloud">TransProCloud</a> - online translation project management tools.</h4>
+<?php
+echo "TIME: ";
+echo date('H:i');
+echo " DATE: ";
+echo date('m/d/Y');
+?>
+<ul>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$cquery = "SELECT * FROM clients";
+$cres = mysql_query($cquery);
+$crows = mysql_num_rows($cres);
+echo "<li>Clients listed: $crows</li>";
+?>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$pquery = "SELECT * FROM providers";
+$pres = mysql_query($pquery);
+$prows = mysql_num_rows($pres);
+echo "<li>Providers listed: $prows</li>";
+?>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$tquery = "SELECT * FROM projects";
+$tres = mysql_query($tquery);
+$trows = mysql_num_rows($tres);
+echo "<li>Projects listed: $trows</li>";
+?>
+<li>Projects Due: -</li>
+<li>Invoice Payable: -</li>
+<li>Invoices Due: - </li>
+<li>Gross Income, Current Year: -</li>
+<li>Net Income Current Year: -</li>
+<li>Gross Income Current Month: -</li>
+<li>Words Translated, Current Year: -</li>
 
+</ul>
 </div>
 
 <?php
