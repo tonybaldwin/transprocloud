@@ -17,6 +17,14 @@ include '../templates/navbar.php';
 <h4>Provider Management:</h4>
 
 <ul>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$pquery = "SELECT * FROM providers";
+$pres = mysql_query($pquery);
+$prows = mysql_num_rows($pres);
+echo "<li>Providers listed: $prows</li>";
+?>
 <li><a href="provlist.php">provider list</a></li>
 <li><a href="addprov.php">add provider</a></li>
 </ul>

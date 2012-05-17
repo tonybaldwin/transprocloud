@@ -17,6 +17,14 @@ include '../templates/navbar.php';
 <h4>Client Management:</h4>
 
 <ul>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$cquery = "SELECT * FROM clients";
+$cres = mysql_query($cquery);
+$crows = mysql_num_rows($cres);
+echo "<li>Clients listed: $crows</li>";
+?>
 <li><a href="clientlist.php">client list</a></li>
 <li><a href="addclient.php">add client</a></li>
 </ul>
