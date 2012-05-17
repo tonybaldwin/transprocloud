@@ -26,6 +26,7 @@ include '../templates/navbar.php';
 	<input type=text name=email value="email"></input>
 	<input type=text name=website value="website or profile"></input>
 	<input type=text name=natlang value="native tongue"></input>
+	<input type=text name=bcountry value="country of birth"></input>
 	<input type=text name=srclangs value="source languages"></input>
 	<input type=text name=notes size=100 value="notes"></input>
 	<input type="hidden" name="act" value="post"></input>
@@ -41,6 +42,7 @@ if($act == "post") {
 	$zip = $_POST['zip'];
 	$state = $_POST['state'];
 	$country = $_POST['country'];
+	$bcountry = $_POST['bcountry'];
 	$website = $_POST['website'];
 	$email = $_POST['email'];
 	$natlang = $_POST['natlang'];
@@ -48,7 +50,7 @@ if($act == "post") {
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="INSERT INTO providers (name, street, city, state, country, zip, email, website, natlang, srclangs, notes) VALUES('$name', '$street', '$city', '$state', '$country', '$zip', '$email', '$website', '$natlang', '$srclangs', '$notes')";
+	$query="INSERT INTO providers (name, street, city, state, bcountry, country, zip, email, website, natlang, srclangs, notes) VALUES('$name', '$street', '$city', '$state', '$bcountry', '$country', '$zip', '$email', '$website', '$natlang', '$srclangs', '$notes')";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
     }
