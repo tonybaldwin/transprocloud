@@ -30,7 +30,8 @@ while($row = mysql_fetch_assoc($result))
 	$srclangs = $row['srclangs'];
 	$natlang = $row['natlang'];
 	$country = $row['country'];
-	echo "<li>$name, $srclangs to $natlang, $country, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
+	$bcountry = $row['bcountry'];
+	echo "<li>$name, $srclangs to $natlang-$bcountry, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
 }
 echo "</ul>";
 mysql_close();
