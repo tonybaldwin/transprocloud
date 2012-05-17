@@ -16,19 +16,21 @@ include '../templates/navbar.php';
 <div id="main">
 
 <h4>Provider List:</h4>
-<ul>
 <?php
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-$query  = "SELECT name, website FROM providers";
+$query  = "SELECT name, email, website, srclangs, natlang, country FROM providers";
 $result = mysql_query($query);
+echo "<ul>";
 while($row = mysql_fetch_assoc($result))
 {
 	$name = $row['name'];
 	$website = $row['website'];
+	$email = $row['email'];
 	$srclangs = $row['srclangs'];
 	$natlang = $row['natlang'];
-	echo "<li>$name, $natlang to $srclangs, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
+	$country = $row['country'];
+	echo "<li>$name, $srclangs to $natlang, $country, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
 }
 echo "</ul>";
 mysql_close();

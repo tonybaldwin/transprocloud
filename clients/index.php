@@ -9,7 +9,7 @@
 <!-- transprocloud index --!>
 <?php
 include '../templates/header.php';
-include 'config.php';
+include '../admin/config.php';
 include '../templates/navbar.php';
 ?>
 
@@ -19,13 +19,12 @@ include '../templates/navbar.php';
 <ul>
 <li><a href="clientlist.php">client list</a></li>
 <li><a href="addclient.php">add client</a></li>
-<li><a href="editclient.php">edit client</a></li>
 </ul>
 
 <h4>Search:</h4>
 
 <form action="index.php" method="post">
-	<input type=text name=sterm size=100 value="enter search term"></input>
+	<input type=text name=sterm size=50 value="enter search term"></input>
 	<input type="hidden" name="act" value="post"></input>
 	<input type=submit name="submit" value="Submit"></input>
 </form>
