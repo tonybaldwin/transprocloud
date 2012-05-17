@@ -19,7 +19,7 @@ include '../templates/navbar.php';
 <?php
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-$query  = "SELECT name, email, website, srclangs, natlang, country FROM providers";
+$query  = "SELECT name, bcountry, email, website, srclangs, natlang, country FROM providers";
 $result = mysql_query($query);
 echo "<ul>";
 while($row = mysql_fetch_assoc($result))
