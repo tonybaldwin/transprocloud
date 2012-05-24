@@ -1,6 +1,6 @@
 <?php
 $dbname = 'tpcloud';
-$dbuser =  'bumwipe';
-$dbpass = 'tp4bunghole';
+$dbuser = 'dbuser';
+$dbpass = 'dbpassword';
 $dbhost = 'localhost';
-$url = 'http://tonybaldwin.homelinux.net/mine/tpcloud';
+$url = 'http://yoursite.com/tpcloud';
