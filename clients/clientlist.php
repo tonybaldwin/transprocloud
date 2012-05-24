@@ -20,13 +20,15 @@ include '../templates/navbar.php';
 <?php
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-$query  = "SELECT name, website FROM clients";
+$query  = "SELECT id, name, clinick, website FROM clients";
 $result = mysql_query($query);
 while($row = mysql_fetch_assoc($result))
 {
+	$id = $row['id'];
+	$clinick = $row['clinick'];
 	$name = $row['name'];
 	$website = $row['website'];
-	echo "<li>$name: <a href=\"$website\">$website</a>, <a href=\"$url/clients/editclient.php?name=$name\">view/edit client</a></li>";
+	echo "<li>ID: $id, $clinick, $name: <a href=\"$website\">$website</a>, <a href=\"$url/clients/editclient.php?clinick=$clinick\">view/edit client</a></li>";
 }
 echo "</ul>";
 mysql_close();

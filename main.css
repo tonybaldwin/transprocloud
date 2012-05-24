@@ -9,6 +9,6 @@ a:visited {text-decoration: none; color: #3946ac;}
 a:active {text-decoration: none; color: #999;}
 a:hover {text-decoration: none; background-color: #303e74; color: white; -moz-border-radius: 3px; border-radius: 3px;}
 #header {background-color: #eef8ff; color: black; width: 100%; border-bottom: 1px solid; padding:5px;}
-#navbar {background-color: #fff; color: black; float: left; width: 200px; border-right: 0 px solid; padding: 5px; border-bottom: 0px solid;}
-#main {float: left; width: 900px; padding: 15px; border-left: 1px solid;}
+#navbar {background-color: #fff; color: black; float: left; width: 200px; border-right: 0px solid; padding: 5px;}
+#main {float: left; width: 900px; padding: 15px; border-left: 0px solid;}
 #footer {background-color: #eef8ff; clear: both; border-top: solid 1px; padding: 5px;}
