@@ -69,7 +69,7 @@ PRIMARY KEY(id),
  totreceived decimal(9,2),
  grossprofit decimal(9,2),
  estax decimal(9,2),
- netprofit decimal(9,2),")
+ netprofit decimal(9,2)")
  or die(mysql_error());  
 
 echo "Projects Table Created!";
@@ -83,7 +83,7 @@ PRIMARY KEY(id),
  srclang varchar(5),
  targlangs varchar(10),
  notes varchar(500),
- notrans INT,")
+ notrans INT)")
  or die(mysql_error());
 
 echo "Documents Table Created!";
@@ -99,7 +99,7 @@ PRIMARY KEY(id),
   assdate DATE,
   deldate DATE,
   invdate DATE,
-  paidate DATE,")
+  paidate DATE)")
   or die(mysql_error());
 
 echo "Assignments Table Created!";
