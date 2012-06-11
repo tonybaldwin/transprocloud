@@ -69,7 +69,7 @@ PRIMARY KEY(id),
  totreceived decimal(9,2),
  grossprofit decimal(9,2),
  estax decimal(9,2),
- netprofit decimal(9,2)")
+ netprofit decimal(9,2))")
  or die(mysql_error());  
 
 echo "Projects Table Created!";
