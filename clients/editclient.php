@@ -41,7 +41,7 @@ echo "<h4>Client Links:</h4>
 <ul><li>ID: $id, Name: $name, Nick: $clinick</li>
 <li>website: <a href=\"$website\">$website</a></li>
 <li>provider portal: <a href=\"$provsys\">$provsys</a></li>
-<li>projects: <a href=\"$url/projects/clist.php?name=$name\">$name projects</a></li>
+<li>projects: <a href=\"$url/projects/clist.php?clientid=$clinick\">$name projects</a></li>
 </ul><hr />";
 
 

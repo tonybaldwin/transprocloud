@@ -27,6 +27,7 @@ if($act == "post") {
     $dbpass = $_POST['dbpass'];
     $dbhost = $_POST['dbhost'];
     $url = $_POST['url'];
+    $estax = $_POST['estax'];
     @$fp = fopen("config.php", 'w');
     if (!$fp) {
         //The file could not be opened
@@ -35,7 +36,7 @@ if($act == "post") {
         exit;
     } else {
         //The file was successfully opened, lets write the entry to it.
-        $outputstring =  "<?php\n\$dbname = '" .$dbname.  "';\n\$dbuser =  '" . $dbuser . "';\n\$dbpass = '" . $dbpass . "';\n\$dbhost = '" .  $dbhost . "';\n\$url = '" .$url . "';\n";
+        $outputstring =  "<?php\n\$dbname = '" . $dbname .  "';\n\$dbuser =  '" . $dbuser . "';\n\$dbpass = '" . $dbpass . "';\n\$dbhost = '" .  $dbhost . "';\n\$url = '" . $url . "';\n\$estax = '" . $estax . "';\n";
 	
         //Write to the file
         fwrite($fp, $outputstring, strlen($outputstring));
@@ -63,6 +64,8 @@ echo "</tr><tr><td>db host:</td>";
 echo "<td><input type=\"text\" name=\"dbhost\" size=\"50\" value=\"$dbhost\"></textarea></td>";
 echo "</tr><tr><td>site url (no trailing slash):</td>";
 echo "<td><input type=\"text\" name=\"url\" size=\"50\" value=\"$url\"></textarea></td>";
+echo "</tr><tr><td>estimated tax rate:</td>";
+echo "<td><input type=text name=estax value=\"$estax\"></textarea></td>";
 ?>
 </tr></table>
     <input type="hidden" name="act" value="post"></input>
