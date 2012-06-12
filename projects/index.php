@@ -49,7 +49,7 @@ if($act == "post") {
 <hr />
 <?php
 $datenow = date(Ymd);
-$monthago = strtotime("-1 month");
+$monthago = date(Ymd, strtotime("-1 month"));
 
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
