@@ -53,7 +53,7 @@ $monthago = strtotime("-1 month");
 
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-$pquery = "SELECT id, notes, projno, clientid, indate, duedate  FROM projects WHERE indate >= $datenow and indate <= $monthago";
+$pquery = "SELECT id, notes, projno, clientid, indate, duedate  FROM projects WHERE indate <= $datenow and indate >= $monthago";
 $pros = mysql_query($pquery);
 $prows = mysql_num_rows($pros);
 echo "<p>Recent Projects: $prows in this past month</p>";
