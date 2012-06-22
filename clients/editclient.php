@@ -16,16 +16,17 @@ include '../templates/navbar.php';
 <div id="main">
 
 <?php
-$name = isset($_GET['name']) ? htmlentities($_GET['name']) : false;
+$clinick = isset($_GET['clinick']) ? htmlentities($_GET['clinick']) : false;
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-if (isset($name)) {
-$query  = "SELECT * FROM clients where name = \"$name\"";
+if (isset($clinick)) {
+$query  = "SELECT * FROM clients where clinick = \"$clinick\"";
 $result = mysql_query($query);
 while($row = mysql_fetch_assoc($result))
 {
 	$id = $row['id'];
 	$name = $row['name'];
+	$clinick = $row['clinick'];
 	$street = $row['street'];
 	$city = $row['city'];
 	$country = $row['country'];
@@ -37,16 +38,17 @@ while($row = mysql_fetch_assoc($result))
 	$state = $row['state'];
 }
 echo "<h4>Client Links:</h4>
-<ul><li>ID: $id, Name: $name</li>
+<ul><li>ID: $id, Name: $name, Nick: $clinick</li>
 <li>website: <a href=\"$website\">$website</a></li>
 <li>provider portal: <a href=\"$provsys\">$provsys</a></li>
-<li>projects: <a href=\"$url/projects/clist.php?name=$name\">$name projects</a></li>
+<li>projects: <a href=\"$url/projects/clist.php?clientid=$clinick\">$name projects</a></li>
 </ul><hr />";
 
 
 echo "<h4>Edit Client:</h4>
 <form action=\"editclient.php?name=$name\" method=\"post\">
 	<input type=text name=name value=\"$name\"></input>
+	<input type=text name=clinick value=\"$clinick\"></input>
 	<input type=text name=street value=\"$street\"></input>
 	<input type=text name=city value=\"$city\"></input>
 	<input type=text name=state value=\"$state\"></input>
@@ -67,6 +69,7 @@ mysql_close();
 $act = $_POST['act'];
 if($act == "post") {
 	$name = $_POST['name'];
+	$clinick = $_POST['clinick'];
 	$street = $_POST['street'];
 	$city = $_POST['city'];
 	$zip = $_POST['zip'];
@@ -78,10 +81,10 @@ if($act == "post") {
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="UPDATE clients SET name='$name', street='$street', city='$city', country='$country', zip='$zip', email='$email', website='$website', provsys='$provsys', notes='$notes', state='$state' WHERE id = '$id'";
+	$query="UPDATE clients SET name='$name', clinick='$clinick', street='$street', city='$city', country='$country', zip='$zip', email='$email', website='$website', provsys='$provsys', notes='$notes', state='$state' WHERE id = '$id'";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
-	echo "<h4>Client updated.</h4> <p><a href=\"editclient.php?name=$name\">Refresh page to verify results</a>.</p>";
+	echo "<h4>Client updated.</h4> <p><a href=\"editclient.php?clinick=$clinick\">Refresh page to verify results</a>.</p>";
     }
 ?>
 

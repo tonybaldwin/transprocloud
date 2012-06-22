@@ -34,7 +34,10 @@ while($row = mysql_fetch_assoc($result))
 	$email = $row['email'];
 	$website = $row['website'];
 	$natlang = $row['natlang'];
-	$srclangs = $row['srclangs'];
+	$srclang1 = $row['srclang1'];
+	$srclang2 = $row['srclang2'];
+	$srclang3 = $row['srclang3'];
+	$rate = $row['rate'];
 	$notes = $row['notes'];
 	$state = $row['state'];
 }
@@ -42,7 +45,8 @@ echo "<h4>Provider Links:</h4>
 <ul><li>ID: $id, Name: $name</li>
 <li>website: <a href=\"$website\">$website</a></li>
 <li>e-mail: <a href=\"mailto:$email\">$email</a></li>
-<li>languages: $srclangs to  $natlang-$bcountry</li>
+<li>languages: $srclang1, $srclang2, $srclang3 to  $natlang-$bcountry</li>
+<li>rate: $rate</li>
 <li>projects: <a href=\"$url/projects/pplist.php?name=$name\">$name projects</a></li>
 </ul><hr />";
 
@@ -58,9 +62,12 @@ echo "<h4>Edit Provider:</h4>
 	<tr><td>Country:</td><td><input type=text name=country size=10 value=\"$country\"></input></td></tr>
 	<tr><td>Website or Profile:</td><td><input type=text size=40 name=website value=\"$website\"></input></td></tr>
 	<tr><td>E-mail: </td><td><input type=text name=email size=40 value=\"$email\"></input></td></tr>
-	<tr><td>Source Language(s)<br />(comma separated list)</td><td><input type=text size=10 name=srclangs value=\"$srclangs\"></input></td></tr>
+	<tr><td>Source Language 1<br />(comma separated list)</td><td><input type=text size=10 name=srclang1 value=\"$srclang1\"></input></td></tr>
+	<tr><td>Source Language 2<br />(comma separated list)</td><td><input type=text size=10 name=srclang2 value=\"$srclang2\"></input></td></tr>
+	<tr><td>Source Language 3<br />(comma separated list)</td><td><input type=text size=10 name=srclang3 value=\"$srclang3\"></input></td></tr>
 	<tr><td>Native Tongue:</td><td><input type=text size=10 name=natlang value=\"$natlang\"></input></td></tr>
-	<tr><td>Country of Origin:</td><td><input type=text name=bcountry size=10 value=\"$bcountry\"></input></td></tr></tbody></table>
+	<tr><td>Country of Origin:</td><td><input type=text name=bcountry size=10 value=\"$bcountry\"></input></td></tr>
+	<tr><td>Rate (USD/word):</td><td><input type=text name=rate size=10 value=\"$rate\"></input></td></tr></tbody></table>
 	<p>Notes: <input type=text name=notes size=100 value=\"$notes\"></input></p>
 	<input type=\"hidden\" name=\"act\" value=\"post\"></input>
 	<input type=submit name=\"submit\" value=\"Submit\"></input>
@@ -82,14 +89,17 @@ if($act == "post") {
 	$website = $_POST['website'];
 	$email = $_POST['email'];
 	$natlang = $_POST['natlang'];
-	$srclangs = $_POST['srclangs'];
+	$srclang1 = $_POST['srclang1'];
+	$srclang2 = $_POST['srclang2'];
+	$srclang3 = $_POST['srclang3'];
+	$rate = $_POST['rate'];
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="UPDATE providers SET name='$name', street='$street', city='$city', country='$country', bcountry='$bcountry', zip='$zip', email='$email', website='$website', natlang='$natlang', notes='$notes', state='$state', srclangs='$srclangs' WHERE id = '$id'";
+	$query="UPDATE providers SET rate='$rate', name='$name', street='$street', city='$city', country='$country', bcountry='$bcountry', zip='$zip', email='$email', website='$website', natlang='$natlang', notes='$notes', state='$state', srclang1='$srclang1', srclang2='$srclang2', srclang3='$srclang3' WHERE id = '$id'";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
-	echo "<h4>Client updated.</h4> <p><a href=\"editprov.php?name=$name\">Refresh page to verify results</a>.</p>";
+	echo "<h4>Provider updated.</h4> <p><a href=\"editprov.php?name=$name\">Refresh page to verify results</a>.</p>";
     }
 ?>
 

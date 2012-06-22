@@ -14,6 +14,7 @@ include 'templates/navbar.php';
 ?>
 
 <div id="main">
+<a href="http://tonyb.us/transprocloud"><img src="images/tpcloud.png" width="600" alt="TransProCloud"></a>
 <h4>TransProCloud HELP!</h4>
 
 <p>See: <a href="http://tonyb.us/transprocloud">TransProCloud</a></p>

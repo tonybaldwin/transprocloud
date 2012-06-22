@@ -17,6 +17,14 @@ include '../templates/navbar.php';
 <h4>Provider Management:</h4>
 
 <ul>
+<?php
+mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
+mysql_select_db("$dbname") or die(mysql_error());
+$pquery = "SELECT * FROM providers";
+$pres = mysql_query($pquery);
+$prows = mysql_num_rows($pres);
+echo "<li>Providers listed: $prows</li>";
+?>
 <li><a href="provlist.php">provider list</a></li>
 <li><a href="addprov.php">add provider</a></li>
 </ul>
@@ -43,7 +51,7 @@ if($lact == "post") {
 	$tlang = $_POST['tlang'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die (mysql_error());
-	$lquery="SELECT * FROM providers WHERE srclangs = \"$slang\" and natlang=\"$tlang\"";
+	$lquery="SELECT * FROM providers WHERE srclang1 = \"$slang\" or srclang2 = \"$slang\" or srclang3 = \"$slang\" and natlang=\"$tlang\"";
 	$lresult = mysql_query($lquery);
 	if(mysql_num_rows($lresult)==0) {
 	echo "<h4>Search Results:</h4><p>no such provider...sorry</p>";
@@ -58,8 +66,10 @@ if($lact == "post") {
 		$email = $row['email'];
 		$website = $row['website'];
 		$natlang = $row['natlang'];
-		$srclangs = $row['srclangs'];
-		echo "<li>$name, $country, $srclangs to $natlang-$bcountry, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"editprov.php?name=$name\">edit $name</a>, <a href=\"listproj.php?name=$name\">list $name projects</a></li>";
+		$srclang1 = $row['srclang1'];
+		$srclang2 = $row['srclang2'];
+		$srclang3 = $row['srclang3'];
+		echo "<li>$name, $country, $srclang1, $srclang2, $srclang3 to $natlang-$bcountry, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"editprov.php?name=$name\">edit $name</a>, <a href=\"listproj.php?name=$name\">list $name projects</a></li>";
 	}
 	echo "</ul>";
 	mysql_close();

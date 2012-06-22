@@ -19,18 +19,23 @@ include '../templates/navbar.php';
 <?php
 mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 mysql_select_db("$dbname") or die(mysql_error());
-$query  = "SELECT name, email, website, srclangs, natlang, country FROM providers";
+$query  = "SELECT id, name, rate, email, website, bcountry, srclang1, srclang2, srclang3, natlang, country FROM providers";
 $result = mysql_query($query);
 echo "<ul>";
 while($row = mysql_fetch_assoc($result))
 {
+	$id = $row['id'];
 	$name = $row['name'];
 	$website = $row['website'];
 	$email = $row['email'];
-	$srclangs = $row['srclangs'];
+	$rate = $row['rate'];
+	$srclang1 = $row['srclang1'];
+	$srclang2 = $row['srclang2'];
+	$srclang3 = $row['srclang3'];
 	$natlang = $row['natlang'];
 	$country = $row['country'];
-	echo "<li>$name, $srclangs to $natlang, $country, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
+	$bcountry = $row['bcountry'];
+	echo "<li>ID: $id, $name, $srclang1, $srclang2, $srclang3 to $natlang-$bcountry, rate USD $rate/word, <a href=\"mailto:$email\">$email</a>, <a href=\"$website\">$website</a>, <a href=\"$url/providers/editprov.php?name=$name\">view/edit provider</a></li>";
 }
 echo "</ul>";
 mysql_close();

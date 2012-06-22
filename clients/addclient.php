@@ -17,7 +17,8 @@ include '../templates/navbar.php';
 <h4>Add Client:</h4>
 
 <form action="addclient.php" method="post">
-	<input type=text name=name value="client name"></input>
+	<input type=text name=name value="client full name"></input>
+	<input type=text name=clinick value="client nickname"></input>
 	<input type=text name=street value="street name"></input>
 	<input type=text name=city value="city"></input>
 	<input type=text name=state value="state or province"></input>
@@ -35,6 +36,7 @@ include '../templates/navbar.php';
 $act = $_POST['act'];
 if($act == "post") {
 	$name = $_POST['name'];
+	$clinick = $_POST['clinick'];
 	$street = $_POST['street'];
 	$city = $_POST['city'];
 	$zip = $_POST['zip'];
@@ -46,7 +48,7 @@ if($act == "post") {
 	$notes = $_POST['notes'];
  	mysql_connect("$dbhost", "$dbuser", "$dbpass") or die(mysql_error());
 	mysql_select_db("$dbname") or die(mysql_error());
-	$query="INSERT INTO clients (name, street, city, country, zip, email, website, provsys, notes, state) VALUES('$name', '$street', '$city', '$country', '$zip', '$email', '$website', '$provsys', '$notes', '$state')";
+	$query="INSERT INTO clients (name, clinick, street, city, country, zip, email, website, provsys, notes, state) VALUES('$name', '$clinick', '$street', '$city', '$country', '$zip', '$email', '$website', '$provsys', '$notes', '$state')";
 	mysql_query($query) or die('Error, insert query failed');	
 	mysql_close();
     }

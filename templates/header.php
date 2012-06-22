@@ -6,5 +6,7 @@ include '../admin/config.php';
 include 'admin/config.php';
 }
 
-echo "<div id=\"header\"><p><strong><a href=\"http://tonyb.us/transprocloud\">TransProCloud</a></strong> - translation project management in the cloud</p></div>";
+echo "<div id=\"header\">";
+echo "<a href=\"http://tonyb.us/transprocloud\"><img src=\"$url/images/tpnavbutton.jpg\" alt=\"TransProCloud\" border=\"0\"></a>";
+echo "</div>";
 ?>
