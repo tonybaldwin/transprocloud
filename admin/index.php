@@ -16,7 +16,7 @@ include '../templates/navbar.php';
 <?php
 echo date('Y.m.d.H.i.s');
 ?>
-<p><a href="http://tonyb.us/transprocloud"><img src="images/tpcloud.png"></a></p>
+<p><a href="http://tonyb.us/transprocloud"><img src="../images/tpcloud.png"></a></p>
 <?php
 require_once('config.php');
 
