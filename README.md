@@ -15,4 +15,6 @@ This code is not complete.
 When this code is actually a stable release, 
 this BEWARE message will be removed from this file.
 
+Demo installation here: http://tpc-nirvana.rhcloud.com/
+
 ./tony
