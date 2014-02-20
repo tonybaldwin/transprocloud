@@ -11,4 +11,4 @@ a:hover {text-decoration: none; background-color: #303e74; color: white; -moz-bo
 #header {background-color: #eef8ff; color: black; width: 100%; border-bottom: 1px solid; padding:5px;}
 #navbar {background-color: #fff; color: black; float: left; width: 200px; border-right: 0px solid; padding: 5px;}
 #main {float: left; width: 900px; padding: 15px; border-left: 0px solid;}
-#footer {background-color: #eef8ff; clear: both; border-top: solid 1px; padding: 5px;}
+#footer {position:fixed;bottom:0;width:100%;background-color: #eef8ff; clear: both; border-top: solid 1px; padding: 5px;}
