@@ -59,6 +59,8 @@ echo "<li>Projects listed: $trows</li>";
 <li>Words Translated, Current Year: -</li>
 
 </ul>
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

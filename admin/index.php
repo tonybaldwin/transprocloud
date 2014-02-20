@@ -72,6 +72,8 @@ echo "<td><input type=text name=estax value=\"$estax\"></textarea></td>";
     <input type="submit" name="submit" value="Submit"></input>
 </form>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

@@ -681,6 +681,8 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 <a href="http://www.gnu.org/licenses/">gnu.org/licenses</a>.
 
 </pre>
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

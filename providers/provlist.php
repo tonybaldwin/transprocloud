@@ -43,6 +43,8 @@ echo "<p>return to <a href=\"$url\">home</a> or <a href=\"$url/providers/\">prov
 ?>
 
 </div>
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 
 <?php
 include '../templates/footer.php';

@@ -22,6 +22,8 @@ include 'templates/navbar.php';
 <p><a href="http://tonyb.us/transprocloud">TransProCloud</a> is <a href="http://www.gnu.org/philosophy/free-sw.html">Free/Open Source Software</a>, licensed acording to the terms of the <a href="http://tonybaldwin.homelinux.net/mine/tpcloud/license.php">GNU Affero General Public License, version 3 (or later)</a>.
 <p>For further information and support, see: <a href="http://tonyb.us/transprocloud">TransProCloud</a></p>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

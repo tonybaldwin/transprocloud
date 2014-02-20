@@ -35,6 +35,8 @@ mysql_close();
 echo "<p>return to <a href=\"$url\">home</a> or <a href=\"$url/clients/\">clients</a></p>";
 ?>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

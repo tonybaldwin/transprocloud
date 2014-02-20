@@ -19,6 +19,8 @@ include 'templates/navbar.php';
 
 <p>See: <a href="http://tonyb.us/transprocloud">TransProCloud</a></p>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

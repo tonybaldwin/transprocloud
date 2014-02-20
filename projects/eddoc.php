@@ -84,6 +84,8 @@ if($act == "post") {
     }
 ?>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

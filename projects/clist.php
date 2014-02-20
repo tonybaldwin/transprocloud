@@ -56,6 +56,8 @@ mysql_close();
 
 ?>
 
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php

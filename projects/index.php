@@ -70,6 +70,8 @@ while($row = mysql_fetch_assoc($pros))
 }
 echo "</ul>";
 ?>
+<div style="clear:both"></div>
+<p><br /><br /><br /></p>
 </div>
 
 <?php
