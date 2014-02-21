@@ -59,7 +59,7 @@ echo "<td><input type=\"text\" name=\"dbname\" size=\"50\" value=\"$dbname\"></i
 echo "</tr><tr><td>db user:</td>";
 echo "<td><input type=\"text\" name=\"dbuser\" size=\"50\" value=\"$dbuser\"></input></td>";
 echo "</tr><tr><td>db password:</td>";
-echo "<td><input type=\"text\" name=\"dbpass\" size=\"50\" value=\"$dbpass\"></textarea></td>";
+echo "<td><input type=\"password\" name=\"dbpass\" size=\"50\" value=\"$dbpass\"></textarea></td>";
 echo "</tr><tr><td>db host:</td>";
 echo "<td><input type=\"text\" name=\"dbhost\" size=\"50\" value=\"$dbhost\"></textarea></td>";
 echo "</tr><tr><td>site url (no trailing slash):</td>";
