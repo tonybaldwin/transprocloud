@@ -85,7 +85,8 @@ PRIMARY KEY(id),
  srclang varchar(5),
  targlangs varchar(10),
  notes varchar(500),
- notrans INT)")
+ notrans INT),
+ notes varchar(500))")
  or die(mysql_error());
 
 echo "Documents Table Created!";
